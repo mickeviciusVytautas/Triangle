@@ -1,5 +1,8 @@
 package com.tree;
 
+import com.tree.algorithm.IterativeAlgorithm;
+import com.tree.algorithm.RecursiveAlgorithm;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -15,13 +18,13 @@ public class TriangleSum {
         List<List<Integer>> triangle = buildTriangle();
 
         // Iterative solution
-        IterativeSum iterativeSum = new IterativeSum();
-        int answer = iterativeSum.findHighestValidSum(triangle);
+        IterativeAlgorithm iterativeAlgorithm = new IterativeAlgorithm();
+        int answer = iterativeAlgorithm.findMaxSum(triangle);
         System.out.println(answer);
 
         // Recursive solution
-        Recursive recursive = new Recursive(triangle);
-        int recAnswer = recursive.findMaxSum(0, 0);
+        RecursiveAlgorithm recursiveAlgorithm = new RecursiveAlgorithm(triangle);
+        int recAnswer = recursiveAlgorithm.findMaxSum(0, 0);
         System.out.println(recAnswer);
     }
 
